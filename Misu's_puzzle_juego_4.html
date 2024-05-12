@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <style>
+        #textoFinal {
+            position: relative;
+            right: -150px;
+            top: 70px;
+        }
+
+        g {
+            --s: 200px;
+            /* size of the puzzle */
+            display: grid;
+            max-width: var(--s);
+            border: 1px solid;
+            margin: auto;
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+        z {
+            aspect-ratio: 1;
+            outline: 1px dashed;
+            display: grid;
+            position: relative;
+            pointer-events: none;
+        }
+
+        z a:hover~b {
+            transform: translate(0);
+            box-shadow: none;
+            transition: 0s;
+            pointer-events: none;
+        }
+
+
+        a {
+            width: 0;
+            transition: 0s 0.2s;
+            pointer-events: initial;
+        }
+
+        b {
+            position: absolute;
+            inset: 0;
+            background: var(--i) 0/var(--s) var(--s);
+            box-shadow: 0 0 4px 1px violet;
+            z-index: 2;
+            cursor: grab;
+            pointer-events: initial;
+        }
+
+        z:nth-of-type(1) b {
+            background-position: 0% 0%;
+            transform: translate(150%, 150%) rotate(68deg) translate(455%) rotate(-69deg);
+        }
+
+        z:nth-of-type(2) b {
+            background-position: 33.3333333333% 0%;
+            transform: translate(50%, 150%) rotate(92deg) translate(417%) rotate(-83deg);
+        }
+
+        z:nth-of-type(3) b {
+            background-position: 66.6666666667% 0%;
+            transform: translate(-50%, 150%) rotate(95deg) translate(396%) rotate(-100deg);
+        }
+
+        z:nth-of-type(4) b {
+            background-position: 100% 0%;
+            transform: translate(-150%, 150%) rotate(119deg) translate(487%) rotate(-118deg);
+        }
+
+        z:nth-of-type(5) b {
+            background-position: 0% 33.3333333333%;
+            transform: translate(200%, 100%) rotate(140deg) translate(510%) rotate(-146deg);
+        }
+
+        z:nth-of-type(6) b {
+            background-position: 33.3333333333% 33.3333333333%;
+            transform: translate(50%, 50%) rotate(107deg) translate(431%) rotate(-102deg);
+        }
+
+        z:nth-of-type(7) b {
+            background-position: 66.6666666667% 33.3333333333%;
+            transform: translate(350%, 350%) rotate(177deg) translate(339%) rotate(-172deg);
+        }
+
+        z:nth-of-type(8) b {
+            background-position: 100% 33.3333333333%;
+            transform: translate(-150%, 50%) rotate(71deg) translate(348%) rotate(-61deg);
+        }
+
+        z:nth-of-type(9) b {
+            background-position: 0% 66.6666666667%;
+            transform: translate(150%, -50%) rotate(98deg) translate(317%) rotate(-94deg);
+        }
+
+        z:nth-of-type(10) b {
+            background-position: 33.3333333333% 66.6666666667%;
+            transform: translate(50%, -50%) rotate(103deg) translate(308%) rotate(-100deg);
+        }
+
+        z:nth-of-type(11) b {
+            background-position: 66.6666666667% 66.6666666667%;
+            transform: translate(-50%, -50%) rotate(128deg) translate(350%) rotate(-118deg);
+        }
+
+        z:nth-of-type(12) b {
+            background-position: 100% 66.6666666667%;
+            transform: translate(-420%, 230%) rotate(15deg) translate(356%) rotate(-10deg);
+        }
+
+        z:nth-of-type(13) b {
+            background-position: 0% 100%;
+            transform: translate(150%, -150%) rotate(140deg) translate(390%) rotate(-148deg);
+        }
+
+        z:nth-of-type(14) b {
+            background-position: 33.3333333333% 100%;
+            transform: translate(50%, -150%) rotate(119deg) translate(400%) rotate(-124deg);
+        }
+
+        z:nth-of-type(15) b {
+            background-position: 66.6666666667% 100%;
+            transform: translate(-50%, -150%) rotate(121deg) translate(370%) rotate(-115deg);
+        }
+
+        z:nth-of-type(16) b {
+            background-position: 100% 100%;
+            transform: translate(-150%, -150%) rotate(61deg) translate(331%) rotate(-60deg);
+        }
+
+        z b.selected {
+            border: 2px solid yellow; /* Resaltado de la pieza seleccionada */
+        }
+
+        z b {
+            transition: 9999s 9999s;
+        }
+
+        z:active a {
+            width: 100%;
+            transition: 0s;
+        }
+
+        z a:hover~b {
+            transform: translate(0);
+            box-shadow: none;
+            transition: 0s;
+        }
+
+        body {
+            background: black;
+            color: #fff;
+            font-family: system-ui, sans-serif;
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin: 0;
+            text-align: center;
+        }
+
+        p {
+            font-size: 1.2rem;
+            text-align: center;
+        }
+    </style>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Misu's puzzle</title>
+</head>
+
+<body>
+    <h1>Misu's puzzle 🦥🥰</h1>
+    <p>Une las piezas para resolverlo</p>
+    <g style="--i:url(https://i.ibb.co/1MfTvx7/Whats-App-Image-2024-03-13-at-23-35-08.jpg)">   
+        <z><a></a><b draggable="true"></b></z>
+        <z><a></a><b draggable="true"></b></z>
+        <z><a></a><b draggable="true"></b></z>
+        <z><a></a><b draggable="true"></b></z>
+        <z><a></a><b draggable="true"></b></z>
+        <z><a></a><b draggable="true"></b></z>
+        <z><a></a><b draggable="true"></b></z>
+        <z><a></a><b draggable="true"></b></z>
+        <z><a></a><b draggable="true"></b></z>
+        <z><a></a><b draggable="true"></b></z>
+        <z><a></a><b draggable="true"></b></z>
+        <z><a></a><b draggable="true"></b></z>
+        <z><a></a><b draggable="true"></b></z>
+        <z><a></a><b draggable="true"></b></z>
+        <z><a></a><b draggable="true"></b></z>
+        <z><a></a><b draggable="true"></b></z>
+    </g>
+    <div id="textoFinal">
+        <button onclick="activarAlarma()">➡️</button>
+    </div>
+    <script>
+    // Selecciona todas las piezas del rompecabezas
+        const pieces = document.querySelectorAll('b');
+        const initialPositions = []; // Almacena las posiciones iniciales de todas las piezas
+
+        pieces.forEach(piece => {
+            const rect = piece.getBoundingClientRect(); // Obtiene las coordenadas relativas a la ventana
+            initialPositions.push({ 
+                x: rect.left, 
+                y: rect.top 
+            });
+            piece.addEventListener('touchstart', touchStart);
+            piece.addEventListener('touchmove', touchMove);
+            piece.addEventListener('touchend', touchEnd);
+        });
+
+        let activePiece = null;
+        let initialX = 0;
+        let initialY = 0;
+
+        function activarAlarma() {
+            alert('¡Enhorabuena has completado el juego!🎁. En este lugar, fresco y tropical, Se preparan platos de sabor especial. Con pescado crudo y arroz al compás, Un rincón donde la frescura es vital. ¿Dónde estás si disfrutas de este menú? ');
+            // Aquí puedes colocar el código para activar tu alarma
+        }
+
+        function touchStart(event) {
+            if (activePiece) {
+                activePiece.classList.remove('selected'); // Deselecciona la pieza activa anterior
+            }
+            activePiece = event.target;
+            activePiece.classList.add('selected'); // Selecciona la pieza activa
+            const touch = event.touches[0];
+            initialX = touch.clientX - activePiece.offsetLeft;
+            initialY = touch.clientY - activePiece.offsetTop;
+        
+        }
+
+        function touchMove(event) {
+            if (!activePiece) return;
+            event.preventDefault();
+            const touch = event.touches[0];
+            const offsetX = touch.clientX - initialX;
+            const offsetY = touch.clientY - initialY;
+            activePiece.style.left = offsetX + 'px';
+            activePiece.style.top = offsetY + 'px';
+        }
+
+        function touchEnd(event) {
+            if (!activePiece) return;
+            checkPuzzle();
+            activePiece.classList.remove('selected'); // Deselecciona la pieza activa al finalizar el toque
+            activePiece = null;
+        }
+
+        function checkPuzzle() {
+            let puzzleCompleted = true;
+            const tolerance = 10;
+
+            pieces.forEach((piece, index) => {
+                const currentPosition = {
+                    x: piece.offsetLeft,
+                    y: piece.offsetTop
+                };
+        // Calcula la posición esperada para esta pieza basándose en su índice
+                const expectedPosition = initialPositions[index];
+        // Compara la posición actual con la posición esperada con una tolerancia de ±5 píxeles
+                if (Math.abs(currentPosition.x - expectedPosition.x) > tolerance || Math.abs(currentPosition.y - expectedPosition.y) > tolerance) {puzzleCompleted = false;
+                }
+            });
+
+            
+        }   
+
+</script>
+
+</body>
+
+</html>
